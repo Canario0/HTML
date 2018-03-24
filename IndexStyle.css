@@ -1,0 +1,25 @@
+h1{
+    color:navy;
+    font-size: 50pt;
+}
+
+#parraf1 {
+    color: royalblue;
+    text-align: center;
+    font-family: cursive;
+}
+#parraf2 {
+    color: red;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.classe{
+    text-align: right;
+
+}
+
+p.classe{
+    color: white;
+    background: black;
+}

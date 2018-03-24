@@ -2,6 +2,7 @@
 <html lang="es-ES">
 <meta charset="UTF-8">
 
+<link rel="stylesheet" type="text/css" href="./IndexStyle.css">
 <head>
     <title>Mi primera página</title>
 </head>
@@ -10,9 +11,9 @@
     <h1>Un título</h1>
     <h2>Otro título</h2>
     <h3>Finalmente la pole</h3>
-    <p style="color:red">Esto es un parrafo</p>
-    <p title="get some help">y esto otro</p>
-    <p>
+    <p id="parraf1">Esto es un parrafo</p>
+    <p title="get some help" id="parraf2">y esto otro</p>
+    <p class="classe">
         <a href="https://github.com/">Mi Libro luna de plutón</a> es genial
         <br> mientras se sigue el curso de
         <br>
@@ -20,7 +21,7 @@
         <button type="button">Click me</button>
     </p>
 
-    <form method="post" action="procesarNombre">
+    <form class="classe" method="post" action="procesarNombre">
         <input type="hidden" name="origen" value="web">
         <p>Nombre:
             <input name="name" type="text" size="25">
