@@ -1,6 +1,6 @@
 h1{
     color:navy;
-    font-size: 50pt;
+    font-size: 15pt;
     background-color: green;
 }
 
@@ -27,6 +27,42 @@ p.classe{
     background: black;
 }
 ul{
-    list-style-image: url(https://s3.amazonaws.com/impressivewebs/2014-02/w3schools-logo.jpg);
+    /*list-style-image: url(https://s3.amazonaws.com/impressivewebs/2014-02/w3schools-logo.jpg);*/
     list-style-type: lower-roman
+}
+
+#cabecera{
+    width: 100%;
+    height: 40%;
+    background-color: blue;
+    text-align: center;
+    border-bottom-style: solid;
+    border-bottom-color:black;
+    border-bottom-width: 2px;
+
+}
+#lateral{
+    width: 30%;
+    height: auto;
+    background-color: brown;
+    float: left;
+    text-align: left;
+    border-right-style: solid;
+    border-right-color: chartreuse;
+    border-right-width: 2px;
+}
+
+#centro{
+    width: 69%;
+    height: 60%;
+    background: blueviolet;
+
+}
+
+#centro p{
+    text-align: left;
+}
+
+input{
+    width: 100%
 }
