@@ -43,7 +43,7 @@ ul{
 }
 #lateral{
     width: 30%;
-    height: auto;
+    height: 100%;
     background-color: brown;
     float: left;
     text-align: left;
@@ -51,11 +51,17 @@ ul{
     border-right-color: chartreuse;
     border-right-width: 2px;
 }
-
-#centro{
-    width: 69%;
+#contenedor{
     height: 60%;
+    width: 100%;
+    overflow:hidden;
+}
+#centro{
+    width: 69.8%;
+    height: 100%;
     background: blueviolet;
+    float: right;
+
 
 }
 
@@ -63,6 +69,8 @@ ul{
     text-align: left;
 }
 
-input{
-    width: 100%
+input, textarea{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
