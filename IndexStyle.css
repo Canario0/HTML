@@ -1,12 +1,15 @@
 h1{
     color:navy;
     font-size: 50pt;
+    background-color: green;
 }
 
 #parraf1 {
     color: royalblue;
     text-align: center;
     font-family: cursive;
+    border:20px solid tomato;
+    background-color: red;
 }
 #parraf2 {
     color: red;
@@ -22,4 +25,8 @@ h1{
 p.classe{
     color: white;
     background: black;
+}
+ul{
+    list-style-image: url(https://s3.amazonaws.com/impressivewebs/2014-02/w3schools-logo.jpg);
+    list-style-type: lower-roman
 }
