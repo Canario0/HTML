@@ -1,0 +1,41 @@
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+p {
+  border: 1.5px solid;
+  width: 595px;
+  height: 842px;
+  position: relative;
+  background: white;
+}
+
+p::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 595px;
+  height: 842px;
+  top: 0;
+  left: 0;
+  transform: rotate(10deg);
+  border: 1.5px solid;
+  z-index: -1;
+  background: white;
+}
+
+p::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 595px;
+  height: 842px;
+  top: 0;
+  left: 0;
+  transform: rotate(5deg);
+  border: 1.5px solid;
+  z-index: -1;
+  background: white;
+}
