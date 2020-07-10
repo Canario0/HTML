@@ -1,0 +1,29 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.typer {
+    display: inline-flex;
+}
+
+.typer>.text {
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    animation-duration: 5s;
+    animation-name: typer;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(13, end);
+    animation-direction: alternate;
+    border-right: 3px solid black;
+}
+
+@keyframes typer {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 105%;
+    }
+}
