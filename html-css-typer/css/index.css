@@ -12,10 +12,10 @@
     font-family: monospace;
     white-space: nowrap;
     overflow: hidden;
-    animation-duration: 4s;
+    animation-duration: calc(0.35s * 104);
     animation-name: typer;
     animation-iteration-count: infinite;
-    animation-timing-function: steps(12, end);
+    animation-timing-function: steps(104, end);
     animation-direction: alternate;
     border-right: 3px solid black;
 }
@@ -24,16 +24,16 @@
     0% {
         width: 0%;
     }
-    80% {
+    /* 80% {
         width: 100%;
         border-right: 3px solid black;
-    }
+    } */
     95% {
         width: 100%;
-        border-right: 3px none black;
+        /* border-right: 3px none black; */
     }
     100% {
         width: 100%;
-        border-right: 3px solid black;
+        /* border-right: 3px solid black; */
     }
 }
