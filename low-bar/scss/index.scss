@@ -79,7 +79,7 @@ $navbar-height: 50px;
     &:hover &-icon,
     &.active &-icon {
       // Move half height the iucon to hover over the navbar border
-      transform: translateY(-$navbar-height / 2);
+      transform: translateY(calc(-1 * $navbar-height / 2));
     }
 
     &:hover &-text,
@@ -108,7 +108,7 @@ $navbar-height: 50px;
     position: absolute;
     top: -50%;
     // a distance of half cell from left (because there is no margins between cells
-    left: ($navbar-width / $navbar-item-count)/2;
+    left: calc(($navbar-width / $navbar-item-count)/2);
     // used to center the item like in the navbar
     transform: translateX(-50%);
     // Size selected by eye
