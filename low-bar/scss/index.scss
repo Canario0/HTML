@@ -1,0 +1,151 @@
+$primary-light: #f9f9f8;
+$primary: #c6c6c5;
+
+$secondary-light: #bfeeff;
+$secondary: #8dbcd8;
+$secondary-dark: #5d8ca7;
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+}
+
+.content {
+  font-size: 1.6rem;
+  width: 100%;
+  height: 100%;
+  background-color: $primary;
+  padding: 10px;
+}
+
+// Count of items in the menu
+$navbar-item-count: 4;
+// Size of the menu
+$navbar-width: 330px;
+$navbar-height: 50px;
+
+.navbar {
+  display: grid;
+  grid-template-rows: 100%;
+  // All cells has the same value
+  grid-template-columns: repeat($navbar-item-count, 1fr);
+  grid-auto-flow: row;
+  gap: 0;
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  min-width: $navbar-width;
+  min-height: $navbar-height;
+  background-color: $primary-light;
+  // meanwhile left set a distance of 50% with the left margin this moves the item
+  // a 50% of iteself to the left centering the item
+  transform: translateX(-50%);
+  border-radius: 5px;
+
+  &__item {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &-icon {
+      font-size: 2.5rem;
+      transition: 0.3s;
+    }
+
+    &-text {
+      position: absolute;
+      left: 50%;
+      // Like in the nav we center the absolute element
+      // The y value has ben set by eye
+      transform: translate(-50%, +20px);
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    &:hover &-icon,
+    &.active &-icon {
+      // Move half height the iucon to hover over the navbar border
+      transform: translateY(-$navbar-height / 2);
+    }
+
+    &:hover &-text,
+    &.active &-text {
+      opacity: 1;
+      // The y value has ben set by eye
+      transform: translate(-50%, +10px);
+    }
+
+    @for $i from 1 through $navbar-item-count {
+      // This for is use to generate the classes that control the animation of the indicator
+      // The formula is the amount use to center the item (this case -50%) + index * size of a cell.
+      // The size of the cell is the width between the number of cells
+      &:nth-child(#{$i}).active ~ .navbar__indicator {
+        transform: translateX(
+          calc(-50% + (($i - 1) * $navbar-width / $navbar-item-count))
+        );
+      }
+    }
+  }
+
+  &__indicator {
+    // Change border sizing to not have to compensate
+    // for the 5px of border added to the element
+    box-sizing: content-box;
+    position: absolute;
+    top: -50%;
+    // a distance of half cell from left (because there is no margins between cells
+    left: ($navbar-width / $navbar-item-count)/2;
+    // used to center the item like in the navbar
+    transform: translateX(-50%);
+    // Size selected by eye
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background-color: $secondary;
+    border: 5px solid $primary;
+    z-index: -1;
+    transition: 0.5s;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: $primary-light;
+      // Position selected by eye to position the item at the border
+      top: 46.5%;
+      left: -14px;
+      // Size selected by eye
+      width: 10px;
+      height: 10px;
+      border-top-right-radius: 80%;
+      box-shadow: 2px -2px 0px 0px $primary;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: $primary-light;
+      // Position selected by eye to position the item at the border
+      top: 46.5%;
+      right: -14px;
+      // Size selected by eye
+      width: 10px;
+      height: 10px;
+      border-top-left-radius: 80%;
+      box-shadow: -4px -2px 0px 0px $primary;
+    }
+  }
+}

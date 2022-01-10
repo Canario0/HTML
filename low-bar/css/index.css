@@ -1,0 +1,115 @@
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+}
+
+.content {
+  font-size: 1.6rem;
+  width: 100%;
+  height: 100%;
+  background-color: #c6c6c5;
+  padding: 10px;
+}
+
+.navbar {
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: row;
+  gap: 0;
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  min-width: 330px;
+  min-height: 50px;
+  background-color: #f9f9f8;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+.navbar__item {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.navbar__item-icon {
+  font-size: 2.5rem;
+  transition: 0.3s;
+}
+.navbar__item-text {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  opacity: 0;
+  transition: 0.3s;
+}
+.navbar__item:hover .navbar__item-icon, .navbar__item.active .navbar__item-icon {
+  transform: translateY(-25px);
+}
+.navbar__item:hover .navbar__item-text, .navbar__item.active .navbar__item-text {
+  opacity: 1;
+  transform: translate(-50%, 10px);
+}
+.navbar__item:nth-child(1).active ~ .navbar__indicator {
+  transform: translateX(calc(-50% + 0px));
+}
+.navbar__item:nth-child(2).active ~ .navbar__indicator {
+  transform: translateX(calc(-50% + 82.5px));
+}
+.navbar__item:nth-child(3).active ~ .navbar__indicator {
+  transform: translateX(calc(-50% + 165px));
+}
+.navbar__item:nth-child(4).active ~ .navbar__indicator {
+  transform: translateX(calc(-50% + 247.5px));
+}
+.navbar__indicator {
+  box-sizing: content-box;
+  position: absolute;
+  top: -50%;
+  left: 41.25px;
+  transform: translateX(-50%);
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background-color: #8dbcd8;
+  border: 5px solid #c6c6c5;
+  z-index: -1;
+  transition: 0.5s;
+}
+.navbar__indicator::before {
+  position: absolute;
+  content: "";
+  background-color: #f9f9f8;
+  top: 46.5%;
+  left: -14px;
+  width: 10px;
+  height: 10px;
+  border-top-right-radius: 80%;
+  box-shadow: 2px -2px 0px 0px #c6c6c5;
+}
+.navbar__indicator::after {
+  position: absolute;
+  content: "";
+  background-color: #f9f9f8;
+  top: 46.5%;
+  right: -14px;
+  width: 10px;
+  height: 10px;
+  border-top-left-radius: 80%;
+  box-shadow: -4px -2px 0px 0px #c6c6c5;
+}
+
+/*# sourceMappingURL=index.css.map */
